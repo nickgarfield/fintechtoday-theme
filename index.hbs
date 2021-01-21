@@ -6,7 +6,7 @@ into the {body} of the default.hbs template --}}
     {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
         <div class="inner">
             {{> "site-nav"}}
-            <div class="site-header-content">
+            {{!-- <div class="site-header-content">
                 <h1 class="site-title">
                     {{#if @site.logo}}
                         <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
@@ -15,7 +15,34 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                 </h1>
                 <h2 class="site-description">{{@site.description}}</h2>
-            </div>
+            </div> --}}
+        </div>
+    </div>
+    <div class="site-header-hero">
+        <div class="inner">
+            <img class="site-header-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+            {{#if @member}}
+                <h1>Welcome back {{@member.email}}!</h1>
+            {{else}}
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Get the latest fintech new delivered right to your inbox.</h3>
+                    <form data-members-form="subscribe">
+                        <div class="form-group">
+                            <input class="subscribe-email" data-members-email placeholder="youremail@example.com" autocomplete="false" />
+                            <button class="button primary" type="submit">
+                                <span class="button-content">Join</span>
+                                <span class="button-loader">{{> "icons/loader"}}</span>
+                            </button>
+                        </div>
+                        <div class="message-success">
+                            <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                        </div>
+                        <div class="message-error">
+                            Please enter a valid email address!
+                        </div>
+                    </form>
+                </section>
+            {{/if}}
         </div>
     </div>
 </header>

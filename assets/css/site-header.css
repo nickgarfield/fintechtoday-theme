@@ -75,3 +75,11 @@
     font-weight: 400;
     opacity: 0.8;
 }
+
+.site-header-hero {
+    padding: 3rem 0;
+}
+
+.site-header-logo {
+    margin: 3rem 0;
+}
